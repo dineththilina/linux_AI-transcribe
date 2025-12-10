@@ -1,4 +1,4 @@
-# `README.md`: Native Transcriber (CPU Beast Mode)
+# `README.md`: Native Transcriber (CPU Mode)
 
 ### **Cross-Platform Linux Compatibility Note**
 
