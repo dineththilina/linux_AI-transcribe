@@ -1,22 +1,26 @@
-# `README.md`: Fedora Native Transcriber (CPU Beast Mode)
+# `README.md`: Native Transcriber (CPU Beast Mode)
 
-This project uses **Rust** and **Whisper.cpp (via `whisper-rs`)** to provide a high-performance transcription GUI for Linux. It is optimized to utilize many CPU cores using the efficient GGML model format, achieving fast and stable results on Fedora.
+### **Cross-Platform Linux Compatibility Note**
+
+**This application is fully compatible with any major Linux distribution (Ubuntu, Debian, Arch, Fedora, etc.)** The "Fedora" naming convention refers only to the environment where this high-performance build was developed and optimized. The core technology uses standard Rust and C++ libraries, ensuring maximum compatibility across the Linux ecosystem.
+
+-----
 
 ## 1\. Prerequisites
 
-You must have the following tools installed on your Fedora system:
+You must have the following general Linux development tools installed on your system:
 
-  * **Rust Toolchain:** (Installed via `rustup`)
-  * **GCC/C++ Compiler:** (`sudo dnf install gcc-c++`)
-  * **CMake:** (`sudo dnf install cmake`)
-  * **GTK Headers:** For the GUI (`sudo dnf install gtk3-devel`)
-  * **FFmpeg:** Required for audio extraction (`sudo dnf install ffmpeg`)
+| Tool | Purpose | Installation (Common `dnf`/`apt` equivalents) |
+| :--- | :--- | :--- |
+| **Rust Toolchain** | Core Language | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` |
+| **CMake** | Build System | `sudo dnf install cmake` or `sudo apt install cmake` |
+| **C/C++ Compiler** | Required by `whisper-rs` | `sudo dnf install gcc-c++` or `sudo apt install build-essential` |
+| **GTK Headers** | For the native GUI | `sudo dnf install gtk3-devel` or `sudo apt install libgtk-3-dev` |
+| **FFmpeg** | Required for audio extraction | `sudo dnf install ffmpeg` or `sudo apt install ffmpeg` |
 
 ## 2\. Model Downloads (GGML Format)
 
-The Rust application requires models in the **GGML (.bin)** format, which is different from the Python CTranslate2 models. The app is configured to automatically scan for these files inside the **`models/`** folder.
-
-Run the commands below to download the desired models into the correct directory.
+The application requires models in the **GGML (.bin)** format, which is different from the Python CTranslate2 models. The app is configured to automatically scan for these files inside the **`models/`** folder.
 
 ### **Setup the `models` Directory**
 
@@ -26,8 +30,6 @@ cd models
 ```
 
 ### **A. Recommended Models (WGET Commands)**
-
-Quantized models (like `q5_1` or `q5_0`) are highly recommended as they offer near-Large model accuracy at much smaller sizes, maximizing CPU speed.
 
 | Model Name | Size | Accuracy | WGET Command |
 | :--- | :--- | :--- | :--- |
@@ -40,13 +42,13 @@ Quantized models (like `q5_1` or `q5_0`) are highly recommended as they offer ne
 
 ## 3\. Build and Run the Application
 
-Once your models are downloaded, you can build the final, optimized native binary.
+Navigate to your project root folder and build the optimized native binary.
 
 ```bash
 # Return to the project root
 cd .. 
 
-# Build the optimized release binary (this takes a moment on the first run)
+# Build the optimized release binary (uses all available CPU cores)
 cargo build --release
 
 # Run the GUI application
