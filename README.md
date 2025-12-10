@@ -10,23 +10,15 @@
 
 You must have the following general Linux development tools installed on your system:
 
-| Tool | Purpose | Installation (Common `dnf`/`apt` equivalents) |
-| :--- | :--- | :--- |
-| **Rust Toolchain** | Core Language | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` |
-| **CMake** | Build System | `sudo dnf install cmake` or `sudo apt install cmake` |
-| **C/C++ Compiler** | Required by `whisper-rs` | `sudo dnf install gcc-c++` or `sudo apt install build-essential` |
-| **GTK Headers** | For the native GUI | `sudo dnf install gtk3-devel` or `sudo apt install libgtk-3-dev` |
-| **FFmpeg** | Required for audio extraction | `sudo dnf install ffmpeg` or `sudo apt install ffmpeg` |
-
 System Dependencies
 
 | Component | Fedora/RHEL (`dnf` commands) | Debian/Ubuntu (`apt` commands) | Purpose |
 |-----------|------------------------------|--------------------------------|---------|
-| **Rust Toolchain** | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` |
+| **Rust Toolchain** | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` | Core Language |
 | **C/C++ Build Tools** | `sudo dnf install gcc-c++ clang` | `sudo apt install build-essential clang` | Compiles the C/C++ foundation (`whisper.cpp`) |
 | **CMake** | `sudo dnf install cmake` | `sudo apt install cmake` | Manages the C++ build process |
 | **GUI/Graphics** | `sudo dnf install gtk3-devel` | `sudo apt install libgtk-3-dev` | Required by the native GUI toolkit (`eframe`) |
-| **Audio/Media** | `sudo dnf install alsa-lib-devel ffmpeg` | `sudo apt install libasound2-dev ffmpeg` | Audio I/O and video-to-audio extraction |
+| **Audio/Media** | `sudo dnf install alsa-lib-devel ffmpeg` | `sudo apt install libasound2-dev ffmpeg` | Required for audio extraction |
 
 
 ## 2\. Model Downloads (GGML Format)
