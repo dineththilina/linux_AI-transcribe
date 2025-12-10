@@ -36,9 +36,9 @@ cd models
 
 | Model Name | Size | Accuracy | WGET Command |
 | :--- | :--- | :--- | :--- |
-| **Small** | \~190 MB | Great speed/quality balance | `wget -O ggml-small.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin` |
-| **Medium** | \~539 MB | Excellent quality, still fast | `wget -O ggml-medium-q5_0.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium-q5_0.bin` |
-| **Large-v3** | \~1.08 GB | Highest quality, slower | `wget -O ggml-large-v3-q5_0.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-q5_0.bin` |
+| **Small** | \~490 MB | Great speed/quality balance | `wget -O ggml-small.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin` |
+| **Medium** | \~1.5 GB | Excellent quality, still fast | `wget -O ggml-medium-q5_0.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-medium-q5_0.bin` |
+| **Large-v3** | \~3.08 GB | Highest quality, slower | `wget -O ggml-large-v3-q5_0.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-q5_0.bin` |
 | **Base** | \~148 MB | Fast, good for clear audio | `wget -O ggml-base.bin https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.bin` |
 
 ***Note:** Your application's Model dropdown will automatically populate with all `.bin` files found in the `models/` directory.*
