@@ -1,0 +1,13 @@
+[package]
+name = "fedora_whisper_gui"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+eframe = "0.29.1"
+rfd = "0.15.0"
+whisper-rs = "0.13.2"
+hound = "3.5.1"
+anyhow = "1.0"
+walkdir = "2.4"  # <-- Added for model scanning
+crossbeam-channel = "0.5.13"
