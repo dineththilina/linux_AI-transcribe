@@ -1,0 +1,8 @@
+# Ignore compiled Rust artifacts
+/target/
+
+# Ignore all local log files
+*.log
+
+# Ignore all GGML model files (THE FIX!)
+models/*.bin
