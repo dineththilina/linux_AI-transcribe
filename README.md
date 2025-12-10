@@ -54,3 +54,15 @@ cargo build --release
 # Run the GUI application
 cargo run --release
 ```
+## 4\. Prerequisites: System Dependencies
+
+The application relies on several core Linux development packages that must be installed before the Rust build can succeed.
+
+| Component | Fedora/RHEL (`dnf` commands) | Debian/Ubuntu (`apt` commands) | Purpose |
+| :--- | :--- | :--- | :--- |
+| **Rust Toolchain** | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` | `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh` | Core compiler, build system |
+| **C/C++ Build Tools** | `sudo dnf install gcc-c++ clang` | `sudo apt install build-essential clang` | Compiles the C/C++ foundation (`whisper.cpp`) |
+| **CMake** | `sudo dnf install cmake` | `sudo apt install cmake` | Manages the C++ build process |
+| **GUI/Graphics** | `sudo dnf install gtk3-devel` | `sudo apt install libgtk-3-dev` | Required by the native GUI toolkit (`eframe`) |
+| **Audio/Media** | `sudo dnf install alsa-lib-devel ffmpeg` | `sudo apt install libasound2-dev ffmpeg` | Audio I/O and video-to-audio extraction |
+
